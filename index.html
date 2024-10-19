@@ -126,57 +126,51 @@
     </div>
 
     <script>
-            // Control del carrusel
-            let currentSlide = 0;
-            const slides = document.querySelectorAll(".carousel-item");
-            const totalSlides = slides.length;
+      // Control del carrusel
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".carousel-item");
+      const totalSlides = slides.length;
 
-            document.getElementById("next").addEventListener("click", () => {
-              slides[currentSlide].classList.remove("active");
-              currentSlide = (currentSlide + 1) % totalSlides;
-              slides[currentSlide].classList.add("active");
-            });
+      document.getElementById("next").addEventListener("click", () => {
+        slides[currentSlide].classList.remove("active");
+        currentSlide = (currentSlide + 1) % totalSlides;
+        slides[currentSlide].classList.add("active");
+      });
 
-            document.getElementById("prev").addEventListener("click", () => {
-              slides[currentSlide].classList.remove("active");
-              currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-              slides[currentSlide].classList.add("active");
-            });
+      document.getElementById("prev").addEventListener("click", () => {
+        slides[currentSlide].classList.remove("active");
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        slides[currentSlide].classList.add("active");
+      });
 
-            async function obtenerDatosPuestos() {
-              // Aquí harías la solicitud a tu servidor o Google Apps Script para obtener el JSON
-              const response = await fetch(
-                "https://script.google.com/macros/s/AKfycbzeadgykUv-MQBhTVFcc-rEZ9iJ8PTC_b7-v7YkZrXISQR8KeNAU_08J0Gy-H5CwOya/exec"
-              );
-              // const datosPuestos = await response.json(); // Asumiendo que la respuesta es JSON
-      <!--         const datosPuestos = [
-                { puesto: "00", nombre: "Juan Perez", formaPago: "Transferencia" },
-                { puesto: "01", nombre: "Maria Lopez", formaPago: "PayPal" },
-                { puesto: "02", nombre: "Carlos Sanchez", formaPago: "Forma 1" },
-                // Agrega más objetos como estos según sea necesario
-              ]; -->
+      async function obtenerDatosPuestos() {
+        // Aquí harías la solicitud a tu servidor o Google Apps Script para obtener el JSON
+        const response = await fetch(
+          "https://script.google.com/macros/s/AKfycbzeadgykUv-MQBhTVFcc-rEZ9iJ8PTC_b7-v7YkZrXISQR8KeNAU_08J0Gy-H5CwOya/exec"
+        );
+        // const datosPuestos = await response.json(); // Asumiendo que la respuesta es JSON
 
-              // Poblamos la tabla con los datos obtenidos
-              poblarTablaConJson(datosPuestos);
-            }
+        // Poblamos la tabla con los datos obtenidos
+        poblarTablaConJson(datosPuestos);
+      }
 
-            function poblarTablaConJson(jsonData) {
-              const tabla = document.getElementById("tabla-puestos");
-              tabla.innerHTML = ""; // Limpia la tabla
+      function poblarTablaConJson(jsonData) {
+        const tabla = document.getElementById("tabla-puestos");
+        tabla.innerHTML = ""; // Limpia la tabla
 
-              jsonData.forEach((dato) => {
-                const fila = document.createElement("tr");
-                fila.innerHTML = `
+        jsonData.forEach((dato) => {
+          const fila = document.createElement("tr");
+          fila.innerHTML = `
                       <td class="border px-4 py-2 text-center">${dato.puesto}</td>
                       <td class="border px-4 py-2">${dato.nombre}</td>
                       <td class="border px-4 py-2">${dato.formaPago}</td>
                   `;
-                tabla.appendChild(fila);
-              });
-            }
+          tabla.appendChild(fila);
+        });
+      }
 
-            // Llama a la función para obtener los datos y poblar la tabla
-            obtenerDatosPuestos();
+      // Llama a la función para obtener los datos y poblar la tabla
+      obtenerDatosPuestos();
     </script>
   </body>
 </html>

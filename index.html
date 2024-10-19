@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gran rifa de un producto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Estilos para el carrusel */
+      .carousel-item {
+        display: none;
+      }
+      .carousel-item.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800 font-sans">
+    <!-- Contenedor principal -->
+    <div class="max-w-4xl mx-auto p-6">
+      <!-- Título de la página -->
+      <h1 class="text-4xl font-bold text-center mb-8 text-blue-600">
+        Gran rifa de un fabuloso parlante inalambrico!
+      </h1>
+
+      <!-- Carrusel de fotos -->
+      <div class="relative w-full h-96 overflow-hidden rounded-lg shadow-lg">
+        <div class="carousel-item active">
+          <img
+            src="rifa11.png"
+            alt="Producto 1"
+            class="w-full h-full object-contain"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="rifa22.png"
+            alt="Producto 2"
+            class="w-full h-full object-contain"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="rifa33.png"
+            alt="Producto 3"
+            class="w-full h-full object-contain"
+          />
+        </div>
+
+        <!-- Botones de navegación -->
+        <button
+          id="prev"
+          class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full"
+        >
+          &larr;
+        </button>
+        <button
+          id="next"
+          class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full"
+        >
+          &rarr;
+        </button>
+      </div>
+
+      <!-- Especificaciones del producto -->
+      <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold mb-4">Detalle del parlante</h2>
+        <p>
+          El NIA AN-2042 proporciona un sonido natural, con claridad y
+          precisión, que se dispersa de manera uniforme. Este parlante combina
+          potencia y calidad en la reproducción de contenidos multimedia.
+        </p>
+        <p>
+          Al ser un modelo activo, solo necesitas conectarlo a la fuente de
+          sonido y el equipo se encarga de amplificar y reproducir el audio.
+          Esto significa más comodidad y menos cables, siendo una solución
+          práctica para producir música en casa o en un estudio, así como para
+          DJs. La duración de la batería depende del uso que se le de al
+          parlante.
+        </p>
+      </div>
+
+      <!-- Día del sorteo -->
+      <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-4">Día del sorteo</h2>
+        <p>
+          El sorteo se realizará el <strong>25 de diciembre de 2024</strong>.
+        </p>
+      </div>
+
+      <!-- Condiciones especiales -->
+      <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-4">Reglas del sorteo</h2>
+        <p>
+          No se reservan puestos, los puestos solo se asignan una vez se
+          confirma el pago.
+        </p>
+      </div>
+
+      <!-- Forma de pago -->
+      <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-4">Forma de pago</h2>
+        <p>
+          Puedes realizar el pago a través de transferencia con Transfiya o
+          Nequi al numero <strong>3108508836</strong>. Enviar comprobante via
+          WhatsApp.
+        </p>
+      </div>
+
+      <!-- Tabla de puestos -->
+      <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-4">Lista de puestos</h2>
+        <table class="table-auto w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-gray-200">
+              <th class="border px-4 py-2">Puesto</th>
+              <th class="border px-4 py-2">Nombre</th>
+              <th class="border px-4 py-2">Forma de pago</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-puestos">
+            <!-- Se llenará automáticamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      // Control del carrusel
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".carousel-item");
+      const totalSlides = slides.length;
+
+      document.getElementById("next").addEventListener("click", () => {
+        slides[currentSlide].classList.remove("active");
+        currentSlide = (currentSlide + 1) % totalSlides;
+        slides[currentSlide].classList.add("active");
+      });
+
+      document.getElementById("prev").addEventListener("click", () => {
+        slides[currentSlide].classList.remove("active");
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        slides[currentSlide].classList.add("active");
+      });
+
+      async function obtenerDatosPuestos() {
+        // Aquí harías la solicitud a tu servidor o Google Apps Script para obtener el JSON
+
+        // const datosPuestos = await response.json(); // Asumiendo que la respuesta es JSON
+        const datosPuestos = [
+          { puesto: "00", nombre: "Juan Perez", formaPago: "Transferencia" },
+          { puesto: "01", nombre: "Maria Lopez", formaPago: "PayPal" },
+          { puesto: "02", nombre: "Carlos Sanchez", formaPago: "Forma 1" },
+          { puesto: "09", nombre: "Nelly", formaPago: "Nequi" },
+          // Agrega más objetos como estos según sea necesario
+        ];
+
+        // Poblamos la tabla con los datos obtenidos
+        poblarTablaConJson(datosPuestos);
+      }
+
+      function poblarTablaConJson(jsonData) {
+        const tabla = document.getElementById("tabla-puestos");
+        tabla.innerHTML = ""; // Limpia la tabla
+
+        jsonData.forEach((dato) => {
+          const fila = document.createElement("tr");
+          fila.innerHTML = `
+                      <td class="border px-4 py-2 text-center">${dato.puesto}</td>
+                      <td class="border px-4 py-2">${dato.nombre}</td>
+                      <td class="border px-4 py-2">${dato.formaPago}</td>
+                  `;
+          tabla.appendChild(fila);
+        });
+      }
+
+      // Llama a la función para obtener los datos y poblar la tabla
+      obtenerDatosPuestos();
+    </script>
+  </body>
+</html>

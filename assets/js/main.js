@@ -1,12 +1,12 @@
 "use strict";
 // Obtén la referencia a la tabla por su ID
-const tableBody = document.getElementById('myTable').querySelector('tbody');
+const tableBody = document.getElementById("myTable").querySelector("tbody");
 
 // Función para crear una nueva fila en la tabla
 function createTableRow(puesto, nombre, telefono) {
-  const row = document.createElement('tr');
+  const row = document.createElement("tr");
   row.innerHTML = `
-    <td class="border border-gray-200 px-4 py-2">${puesto}</td>
+    <td class="text-center items-center border border-gray-200 px-4 py-2">${puesto}</td>
     <td class="border border-gray-200 px-4 py-2">${nombre}</td>
     <td class="border border-gray-200 px-4 py-2">${telefono}</td>
   `;
@@ -15,28 +15,39 @@ function createTableRow(puesto, nombre, telefono) {
 
 // Función para obtener los datos de la API y poblar la tabla
 function fetchDataAndPopulateTable() {
-  fetch('https://script.google.com/macros/s/AKfycbwp8JX5MDqBgDIDpgI5lxp8W8wIH2q2PBQZYRV4KnVZWOac88JxTgS8llEABs5NnCeA/exec')
-    .then(response => response.json())
-    .then(data => {
-      data.puestos.forEach(item => {
+  fetch(
+    "https://script.google.com/macros/s/AKfycbwp8JX5MDqBgDIDpgI5lxp8W8wIH2q2PBQZYRV4KnVZWOac88JxTgS8llEABs5NnCeA/exec"
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      data.puestos.forEach((item) => {
         createTableRow(item.puesto, item.nombre, item.formaPago);
       });
-       const porcentajeElement = document.getElementById('porcentaje');
-       porcentajeElement.setAttribute('data-countup-number', data.puestosOcupados);
+      const porcentajeElement = document.getElementById("porcentaje");
+      porcentajeElement.setAttribute(
+        "data-countup-number",
+        data.puestosOcupados
+      );
 
-      const puestosdisponiblesElement = document.getElementById('puestos-disponibles');
-       puestosdisponiblesElement.setAttribute('data-countup-number', data.puestosRestantes);
+      const puestosdisponiblesElement = document.getElementById(
+        "puestos-disponibles"
+      );
+      puestosdisponiblesElement.setAttribute(
+        "data-countup-number",
+        data.puestosRestantes
+      );
 
-      const valorRecaudadoElement = document.getElementById('recaudado');
-       valorRecaudadoElement.setAttribute('data-countup-number', data.valoreRecaudado);
-
+      const valorRecaudadoElement = document.getElementById("recaudado");
+      valorRecaudadoElement.setAttribute(
+        "data-countup-number",
+        data.valoreRecaudado
+      );
     })
-    .catch(error => console.error('Error fetching data:', error));
+    .catch((error) => console.error("Error fetching data:", error));
 }
 
 // Llama a la función para obtener los datos y poblar la tabla
 fetchDataAndPopulateTable();
-
 
 // ::::: GLobal Javascript ::::
 // ================================Animate Interaction on Scroll ==================================
@@ -157,7 +168,7 @@ tabButtons.forEach((button) => {
 });
 
 // ========================TF-1 : Testimonial Slider================================
-const testimonialSlider = new Swiper('.testimonial-slider', {
+const testimonialSlider = new Swiper(".testimonial-slider", {
   // Optional parameters
   slidesPerView: 1,
   loop: true,
@@ -165,7 +176,7 @@ const testimonialSlider = new Swiper('.testimonial-slider', {
 
   // If we need pagination
   pagination: {
-    el: '.swiper-pagination',
+    el: ".swiper-pagination",
     clickable: true,
   },
 });

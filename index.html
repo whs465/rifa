@@ -169,16 +169,20 @@
         currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
         slides[currentSlide].classList.add("active");
       });
-
       async function obtenerDatosPuestos() {
-        // Aquí harías la solicitud a tu servidor o Google Apps Script para obtener el JSON
         const response = await fetch(
-          "https://script.google.com/macros/s/AKfycbzeadgykUv-MQBhTVFcc-rEZ9iJ8PTC_b7-v7YkZrXISQR8KeNAU_08J0Gy-H5CwOya/exec"
+          "https://script.google.com/macros/s/AKfycbwp8JX5MDqBgDIDpgI5lxp8W8wIH2q2PBQZYRV4KnVZWOac88JxTgS8llEABs5NnCeA/exec"
         );
-        const datosPuestos = await response.json(); // Asumiendo que la respuesta es JSON
+        const datos = await response.json(); // Asumiendo que la respuesta es JSON
 
-        // Poblamos la tabla con los datos obtenidos
-        poblarTablaConJson(datosPuestos);
+        // Mostrar puestos ocupados y restantes
+        //document.getElementById("puestos-ocupados").innerText =
+        //  datos.puestosOcupados;
+        //document.getElementById("puestos-restantes").innerText =
+        //  datos.puestosRestantes;
+
+        // Poblar la tabla con los datos de los puestos
+        poblarTablaConJson(datos.puestos);
       }
 
       function poblarTablaConJson(jsonData) {

@@ -1,207 +1,1131 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GranRifa: Tu Rifa, Tu Planeta.</title>
-    <!-- Favicon -->
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <title>Masco - Saas Software Startup Tailwind Template</title>
+    <meta name="description" content="AIMass Tailwind based SASS Template" />
+
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
     <link
       rel="icon"
       sizes="16x16"
-      href="img/favicon-16x16.png"
+      href="assets/img/favicon-16x16.png"
       type="image/png"
     />
     <link
       rel="icon"
       sizes="32x32"
-      href="img/favicon-32x32.png"
+      href="assets/img/favicon-32x32.png"
       type="image/png"
     />
     <link
       rel="icon"
       sizes="96x96"
-      href="img/favicon-96x96.png"
+      href="assets/img/favicon-96x96.png"
       type="image/png"
     />
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      /* Estilos para el carrusel */
-      .carousel-item {
-        display: none;
-      }
-      .carousel-item.active {
-        display: block;
-      }
-    </style>
+    <!-- Icon Font -->
+    <link
+      rel="stylesheet"
+      href="assets/fonts/iconfonts/font-awesome/stylesheet.css"
+    />
+    <!-- Site font -->
+    <link rel="stylesheet" href="assets/fonts/webfonts/inter/stylesheet.css" />
+    <link
+      rel="stylesheet"
+      href="assets/fonts/webfonts/public-sans/stylesheet.css"
+    />
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="assets/css/vendors/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/vendors/jos.css" />
+    <link rel="stylesheet" href="assets/css/vendors/menu.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css" />
+
+    <!-- Development css -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+
+    <!-- Production css -->
+    <!-- <link rel="stylesheet" href="assets/css/style.min.css"> -->
   </head>
-  <body class="bg-gray-100 text-gray-800 font-sans">
-    <!-- Contenedor principal -->
-    <div class="max-w-4xl mx-auto p-6">
-      <!-- Título de la página -->
-      <h1 class="text-4xl font-bold text-center mb-8 text-blue-600">
-        Gran rifa de un fabuloso parlante inalambrico!
-      </h1>
-      <h2 class="text-4xl font-bold text-center mb-8 text-blue-600">
-        Por solo $7.000
-      </h2>
 
-      <!-- Carrusel de fotos -->
-      <div class="relative w-full h-96 overflow-hidden rounded-lg shadow-lg">
-        <div class="carousel-item active">
-          <img
-            src="rifa11.png"
-            alt="Producto 1"
-            class="w-full h-full object-contain"
-          />
-        </div>
-        <div class="carousel-item">
-          <img
-            src="rifa22.png"
-            alt="Producto 2"
-            class="w-full h-full object-contain"
-          />
-        </div>
-        <div class="carousel-item">
-          <img
-            src="rifa33.png"
-            alt="Producto 3"
-            class="w-full h-full object-contain"
-          />
-        </div>
+  <body>
+    <div class="page-wrapper relative z-[1] bg-[#FDFBF9]">
+      <!--...::: Header Start :::... -->
+      <header
+        class="site-header site-header--absolute is--white py-3"
+        id="sticky-menu"
+      >
+        <div class="container-default">
+          <div class="flex items-center justify-between gap-x-8">
+            <!-- Header Logo -->
+            <a href="index.html" class="">
+              <img
+                src="assets/img/GRDark.png"
+                alt="Masco"
+                width="109"
+                height="24"
+              />
+            </a>
+            <!-- Header Logo -->
 
-        <!-- Botones de navegación -->
-        <button
-          id="prev"
-          class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full"
+            <!-- Header Navigation -->
+            <div class="menu-block-wrapper hidden">
+              <div class="menu-overlay"></div>
+              <nav class="menu-block" id="append-menu-header">
+                <div class="mobile-menu-head">
+                  <div class="go-back">
+                    <i class="fa-solid fa-angle-left"></i>
+                  </div>
+                  <div class="current-menu-title"></div>
+                  <div class="mobile-menu-close">&times;</div>
+                </div>
+                <ul class="site-menu-main">
+                  <li class="nav-item nav-item-has-children">
+                    <a href="index.html" class="nav-link-item drop-trigger"
+                      >Home</a
+                    >
+                  </li>
+                  <li class="nav-item nav-item-has-children">
+                    <a href="#section-about" class="nav-link-item drop-trigger"
+                      >About</a
+                    >
+                  </li>
+                  <li class="nav-item nav-item-has-children">
+                    <a
+                      href="#section-feature"
+                      class="nav-link-item drop-trigger"
+                      >Feature</a
+                    >
+                  </li>
+                  <li class="nav-item nav-item-has-children">
+                    <a
+                      href="#section-pricing"
+                      class="nav-link-item drop-trigger"
+                      >Pricing</a
+                    >
+                  </li>
+                  <li class="nav-item nav-item-has-children">
+                    <a href="#section-team" class="nav-link-item drop-trigger"
+                      >Team</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <!-- Header Navigation -->
+
+            <!-- Header User Event -->
+            <div class="flex items-center gap-6">
+              <!-- Responsive Offcanvas Menu Button -->
+              <div class="block lg:hidden">
+                <button id="openBtn" class="hamburger-menu mobile-menu-trigger">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            </div>
+            <!-- Header User Event -->
+          </div>
+        </div>
+      </header>
+      <!--...::: Header End :::... -->
+
+      <main class="main-wrapper relative overflow-hidden">
+        <!--...::: Hero Section Start :::... -->
+        <section class="section-hero">
+          <!-- Section Background -->
+          <div class="relative z-10 overflow-hidden">
+            <!-- Hero Section Space -->
+            <div class="pt-[105px] sm:pt-[145px] lg:pt-[185px]">
+              <!-- Section Container -->
+              <div class="container-default relative z-10">
+                <!-- Hero Area -->
+                <div class="text-center">
+                  <h1
+                    class="jos -trackig-[1px] mx-auto mb-6 font-PublicSans text-5xl font-bold leading-[1.06] text-[#121212] md:max-w-[80%] md:text-[60px] lg:max-w-[70%] lg:text-[70px] xl:max-w-[856px] xl:text-[90px]"
+                  >
+                    Gran rifa de un fabuloso parlante inalámbrico
+                  </h1>
+                  <p class="jos mx-auto mb-8 max-w-[658px] lg:mb-[50px]">
+                    ¡Estamos rifando nuestra cabina inalámbrica! ¡Queremos
+                    renovar nuestro equipo de sonido! Con lo que recaudemos,
+                    podremos comprar una diadema y un parlante más pequeño y
+                    fácil de llevar a todos lados. Así, todos podremos disfrutar
+                    de mejor sonido mientras hacemos ejercicio. ¡Súmate y gana!
+                  </p>
+                  <div class="jos flex flex-wrap justify-center gap-[18px]">
+                    <a
+                      href="https://wa.me/3108508836?text=Hola,%20anexo%20comprobante%20de%20pago.%20Mi%20número%20es:%20"
+                      class="btn is-lime is-large btn-animation group rounded-[3px]"
+                      ><span>Quiero mi puesto ya!</span></a
+                    >
+                  </div>
+                </div>
+                <!-- Hero Area -->
+
+                <!-- Hero Images -->
+                <div
+                  class="-z-10 -mb-[17px] mt-[60px] grid grid-cols-1 gap-8 sm:grid-cols-2 md:flex md:gap-10 lg:gap-14"
+                >
+                  <div
+                    class="jos md:rotate-[5deg]"
+                    data-jos_animation="fade-left"
+                    data-jos_delay="0.3"
+                  >
+                    <img
+                      src="assets/img/th-8/img1.png"
+                      alt="hero-img-1"
+                      width="279"
+                      height="307"
+                      class="h-full w-full rounded-[5px] object-cover md:h-auto"
+                    />
+                  </div>
+                  <div
+                    class="jos md:-rotate-[5deg] md:self-end"
+                    data-jos_animation="fade-left"
+                    data-jos_delay="0"
+                  >
+                    <img
+                      src="assets/img/th-8/img4.png"
+                      alt="hero-img-2"
+                      width="279"
+                      height="250"
+                      class="h-full w-full rounded-[5px] object-cover md:h-auto"
+                    />
+                  </div>
+                  <div
+                    class="jos md:rotate-[5deg] md:self-end"
+                    data-jos_animation="fade-right"
+                    data-jos_delay="0"
+                  >
+                    <img
+                      src="assets/img/th-8/img3.png"
+                      alt="hero-img-3"
+                      width="279"
+                      height="250"
+                      class="h-full w-full rounded-[5px] object-cover md:h-auto"
+                    />
+                  </div>
+                  <div
+                    class="jos md:-rotate-[5deg]"
+                    data-jos_animation="fade-right"
+                    data-jos_delay="0.3"
+                  >
+                    <img
+                      src="assets/img/th-8/img2.png"
+                      alt="hero-img-4"
+                      width="279"
+                      height="307"
+                      class="h-full w-full rounded-[5px] object-cover md:h-auto"
+                    />
+                  </div>
+                </div>
+                <!-- Hero Images -->
+
+                <!-- Hero Background Shape - 1 -->
+                <div
+                  class="absolute left-0 -z-10 hidden md:block lg:-top-[70px]"
+                >
+                  <img
+                    src="assets/img/elements/hero-8-content-shape.svg"
+                    alt="hero-8-content-shape"
+                    width="291"
+                    height="331"
+                    class="h-auto w-[230px] xxl:h-[331px] xxl:w-[291px]"
+                  />
+                </div>
+                <!-- Hero Background Shape - 2 -->
+                <div
+                  class="absolute top-[100px] -z-10 hidden md:block lg:right-10 xxl:right-0"
+                >
+                  <img
+                    src="assets/img/elements/home-8-dot-shape.svg"
+                    alt="home-8-dot-shape"
+                    width="126"
+                    height="275"
+                    class="h-[200px] w-auto xxl:h-[275px] xxl:w-[125px]"
+                  />
+                </div>
+                <!-- Hero Space -->
+              </div>
+              <!-- Section Container -->
+            </div>
+            <!-- Hero Background Shape - 2 -->
+            <div class="absolute bottom-0 z-10 hidden w-full md:block">
+              <img
+                src="assets/img/elements/section-devider-black.svg"
+                alt="home-8-dot-shape"
+                class="w-full"
+              />
+            </div>
+          </div>
+          <!-- Section Background -->
+        </section>
+        <!--...::: Hero Section End :::... -->
+
+        <!--...::: Fact Section Start :::... -->
+        <section class="section-fact">
+          <!-- Section Background -->
+          <div class="z-10 bg-[#121212]">
+            <!-- Section Space -->
+            <div class="section-space">
+              <!-- Section Container -->
+              <div class="container-default">
+                <!-- Fact Area -->
+                <div
+                  class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[0.8fr_minmax(0,_1fr)] xl:gap-20 xxl:gap-[100px]"
+                >
+                  <!-- Section Wrapper -->
+                  <div>
+                    <!-- Section Block -->
+                    <div class="mb-5">
+                      <h2
+                        class="text-center font-PublicSans text-4xl font-bold leading-[1.14] text-[#FDFBF9] lg:text-left lg:text-5xl xl:text-[56px]"
+                      >
+                        El sorteo se realizará cuando lleguemos al 90% de las
+                        ventas y los ganadores serán los dos últimos números de
+                        la Lotería de Boyacá del sábado siguiente.
+                      </h2>
+                    </div>
+                    <!-- Section Block -->
+                  </div>
+                  <!-- Section Wrapper -->
+                  <div class="grid grid-cols-1 gap-y-6 sm:grid-cols-3">
+                    <!-- Fact Item -->
+                    <div
+                      class="relative px-0 text-center after:absolute after:left-full after:top-1/2 after:hidden after:h-10 after:w-0.5 after:-translate-y-1/2 after:bg-ColorPurple first:pl-0 last:pr-0 last:after:hidden sm:px-10 sm:after:block"
+                    >
+                      <div>
+                        <div
+                          class="mb-[5px] font-PublicSans text-5xl font-bold leading-[1.14] text-[#FDFBF9] xl:text-[56px]"
+                          data-module="countup"
+                        >
+                          <span
+                            id="porcentaje"
+                            class="start-number"
+                            data-countup-number="0"
+                            >0</span
+                          >%
+                        </div>
+                        <span class="text-[#FDFBF9]/60"
+                          >Porcentaje Vendido</span
+                        >
+                      </div>
+                    </div>
+                    <!-- Fact Item -->
+                    <!-- Fact Item -->
+                    <div
+                      class="relative px-0 text-center after:absolute after:left-full after:top-1/2 after:hidden after:h-10 after:w-0.5 after:-translate-y-1/2 after:bg-ColorPurple first:pl-0 last:pr-0 last:after:hidden sm:px-10 sm:after:block"
+                    >
+                      <div>
+                        <div
+                          class="mb-[5px] font-PublicSans text-5xl font-bold leading-[1.14] text-[#FDFBF9] xl:text-[56px]"
+                          data-module="countup"
+                        >
+                          <span
+                            id="puestos-disponibles"
+                            class="start-number"
+                            data-countup-number="0"
+                            >0</span
+                          >
+                        </div>
+                        <span class="text-[#FDFBF9]/60"
+                          >Puestos disponibles</span
+                        >
+                      </div>
+                    </div>
+                    <!-- Fact Item -->
+                    <!-- Fact Item -->
+                    <div
+                      class="relative px-0 text-center after:absolute after:left-full after:top-1/2 after:hidden after:h-10 after:w-0.5 after:-translate-y-1/2 after:bg-ColorPurple first:pl-0 last:pr-0 last:after:hidden sm:px-10 sm:after:block"
+                    >
+                      <div>
+                        <div
+                          class="mb-[5px] font-PublicSans text-5xl font-bold leading-[1.14] text-[#FDFBF9] xl:text-[56px]"
+                          data-module="countup"
+                        >
+                          $<span
+                            id="recaudado"
+                            class="start-number"
+                            data-countup-number="0"
+                            >0</span
+                          >
+                        </div>
+                        <span class="text-[#FDFBF9]/60">Valor recaudado</span>
+                      </div>
+                    </div>
+                    <!-- Fact Item -->
+                  </div>
+                  <!-- Fact List -->
+                </div>
+                <!-- Fact Area -->
+              </div>
+              <!-- Section Container -->
+            </div>
+            <!-- Section Space -->
+          </div>
+          <!-- Section Background -->
+        </section>
+        <!--...::: Fact Section End :::... -->
+
+        <!--...::: Content Section Start :::... -->
+        <section class="section-pricing" id="section-pricing">
+          <div class="relative z-10">
+            <!-- Section Space -->
+            <div class="section-space">
+              <!-- Section Container -->
+              <div class="container-default">
+                <!-- Section Content Wrapper -->
+                <div class="jos">
+                  <!-- Pricing Content Block -->
+                  <div class="mx-auto max-w-[1076px]">
+                    <div
+                      class="flex flex-col items-center rounded-[10px] border border-ColorBlack bg-white p-10 md:flex-row md:divide-x md:px-10 md:py-0 lg:px-[73px]"
+                    >
+                      <div
+                        class="w-full text-center md:w-1/2 md:py-[50px] md:pr-10 md:text-left lg:pr-20"
+                      >
+                        <div class="text-xl leading-[1.6] tracking-tighter">
+                          Por solo
+                        </div>
+                        <div class="month">
+                          <span
+                            class="font-PublicSans text-[50px] font-bold leading-[1.4] text-[#121212] lg:text-[56px]"
+                            >$7.000</span
+                          >
+                        </div>
+                        <p>
+                          Puedes realizar el pago a través de transferencia con
+                          Transfiya o Nequi al número
+                          <strong>3108508836</strong> y despúes enviar
+                          comprobante via WhatsApp indicando tu número elegido.
+                        </p>
+                      </div>
+                      <div
+                        class="w-full md:w-1/2 md:py-[50px] md:pl-10 lg:pl-20 xl:pl-32"
+                      >
+                        <div
+                          class="mb-6 text-center font-semibold md:text-left"
+                        >
+                          Lista de puestos y la gente que le pone el alma.
+                        </div>
+                        <div class="jos col-span-1 lg:col-span-2 xl:col-span-3">
+                          <div class="flex flex-col justify-between gap-y-10">
+                            <div
+                              class="flex flex-col gap-y-4 text-base font-semibold text-[#0F1642]"
+                            >
+                              <table
+                                id="myTable"
+                                class="w-full border-collapse border border-gray-200"
+                              >
+                                <thead>
+                                  <tr>
+                                    <th
+                                      class="border border-gray-200 px-4 py-2 w-1/4"
+                                    >
+                                      Puesto
+                                    </th>
+                                    <th
+                                      class="border border-gray-200 px-4 py-2 w-3/8"
+                                    >
+                                      Nombre
+                                    </th>
+                                    <th
+                                      class="border border-gray-200 px-4 py-2 w-3/8"
+                                    >
+                                      Teléfono
+                                    </th>
+                                  </tr>
+                                </thead>
+                                <tbody></tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+
+                        <a
+                          href="https://wa.me/3108508836?text=Hola,%20anexo%20comprobante%20de%20pago.%20Mi%20número%20es:%20"
+                          class="btn mt-[30px] block rounded-[3px] border-none bg-[#C1FF00] py-[18px] text-ColorBlack hover:bg-[#a6ff00] xl:mt-[50px]"
+                          >Quiero mi puesto ya!</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Pricing Content Block -->
+                </div>
+                <!-- Pricing Area -->
+              </div>
+              <!-- Section Container -->
+            </div>
+            <!-- Section Space -->
+
+            <!-- Section Shape -->
+            <div
+              class="absolute top-28 -z-10 hidden xl:right-10 xl:inline-block xxl:right-[90px]"
+            >
+              <img
+                src="assets/img/elements/home-8-dot-shape-4.svg"
+                alt="home-8-dot-shape-4"
+                width="209"
+                height="297"
+              />
+            </div>
+            <!-- Section Shape -->
+          </div>
+        </section>
+        <!--...::: Content Section End :::... -->
+
+        <!--...::: Service Section Start :::... -->
+        <section class="section-service">
+          <!-- Section Background -->
+          <div class="relative z-10 bg-[#121212]">
+            <!-- Section Space -->
+            <div class="section-space">
+              <!-- Section Container -->
+              <div class="container-default">
+                <!-- Section Content Wrapper -->
+                <div class="jos mb-[60px] xl:mb-20">
+                  <!-- Section Content Block -->
+                  <div
+                    class="mx-auto flex max-w-[700px] flex-col items-center justify-center"
+                  >
+                    <h2
+                      class="mb-5 text-center font-PublicSans text-4xl font-bold leading-[1.14] text-[#FDFBF9] lg:text-5xl xl:text-[56px]"
+                    >
+                      ¡Música para todos! Ayúdanos a renovar nuestro equipo de
+                      sonido
+                    </h2>
+
+                    <p class="text-center text-[#FDFBF9]/80">
+                      Queremos que nuestras actividades físicas sean aún más
+                      divertidas y energéticas. Por eso, estamos organizando una
+                      rifa para recaudar fondos y adquirir un nuevo equipo de
+                      sonido más portátil y una diadema inalámbrica. Con tu
+                      colaboración, podremos disfrutar de nuestra música
+                      favorita mientras nos ejercitamos y, al mismo tiempo,
+                      promover la reutilización de equipos electrónicos.
+                    </p>
+                  </div>
+                  <!-- Section Content Block -->
+                </div>
+                <!-- Section Content Wrapper -->
+
+                <!-- Service Block -->
+                <div
+                  class="grid gap-x-8 gap-y-6 lg:grid-cols-2 xl:gap-x-[100px] xxl:gap-x-[146px]"
+                >
+                  <!-- Service List -->
+                  <div>
+                    <!-- Service Item -->
+                    <div
+                      class="jos border-b border-[#FDFBF9]/10 py-6 first:pt-0 lg:last:border-none lg:last:pb-0"
+                      data-jos_delay="0"
+                    >
+                      <p
+                        class="flex items-center justify-between gap-5 font-PublicSans text-[22px] font-semibold leading-[1.23] text-[#FDFBF9] transition-all duration-300 hover:text-ColorLime xl:text-2xl xxl:text-[26px]"
+                      >
+                        1. Más música, más motivación
+                      </p>
+                    </div>
+                    <!-- Service Item -->
+                    <!-- Service Item -->
+                    <div
+                      class="jos border-b border-[#FDFBF9]/10 py-6 first:pt-0 lg:last:border-none lg:last:pb-0"
+                      data-jos_delay="0.3"
+                    >
+                      <p
+                        class="flex items-center justify-between gap-5 font-PublicSans text-[22px] font-semibold leading-[1.23] text-[#FDFBF9] transition-all duration-300 hover:text-ColorLime xl:text-2xl xxl:text-[26px]"
+                      >
+                        2. Comodidad y portabilidad:
+                      </p>
+                    </div>
+                    <!-- Service Item -->
+                    <!-- Service Item -->
+                    <div
+                      class="jos border-b border-[#FDFBF9]/10 py-6 first:pt-0 lg:last:border-none lg:last:pb-0"
+                      data-jos_delay="0.6"
+                    >
+                      <p
+                        class="flex items-center justify-between gap-5 font-PublicSans text-[22px] font-semibold leading-[1.23] text-[#FDFBF9] transition-all duration-300 hover:text-ColorLime xl:text-2xl xxl:text-[26px]"
+                      >
+                        3. Sostenibilidad
+                      </p>
+                    </div>
+                    <!-- Service Item -->
+                  </div>
+                  <!-- Service List -->
+                  <!-- Service List -->
+                  <div>
+                    <!-- Service Item -->
+                    <div
+                      class="jos border-b border-[#FDFBF9]/10 py-6 first:pt-0 lg:last:border-none lg:last:pb-0"
+                      data-jos_delay="0"
+                    >
+                      <p
+                        class="flex items-center justify-between gap-5 font-PublicSans text-[22px] font-semibold leading-[1.23] text-[#FDFBF9] transition-all duration-300 hover:text-ColorLime xl:text-2xl xxl:text-[26px]"
+                      >
+                        4. Comunidad unida
+                      </p>
+                    </div>
+                    <!-- Service Item -->
+                    <!-- Service Item -->
+                    <div
+                      class="jos border-b border-[#FDFBF9]/10 py-6 first:pt-0 lg:last:border-none lg:last:pb-0"
+                      data-jos_delay="0.3"
+                    >
+                      <p
+                        class="flex items-center justify-between gap-5 font-PublicSans text-[22px] font-semibold leading-[1.23] text-[#FDFBF9] transition-all duration-300 hover:text-ColorLime xl:text-2xl xxl:text-[26px]"
+                      >
+                        5. ¡Gana increíbles premios!
+                      </p>
+                    </div>
+                    <!-- Service Item -->
+                    <!-- Service Item -->
+                    <div
+                      class="jos border-b border-[#FDFBF9]/10 py-6 first:pt-0 lg:last:border-none lg:last:pb-0"
+                      data-jos_delay="0.6"
+                    >
+                      <p
+                        class="flex items-center justify-between gap-5 font-PublicSans text-[22px] font-semibold leading-[1.23] text-[#FDFBF9] transition-all duration-300 hover:text-ColorLime xl:text-2xl xxl:text-[26px]"
+                      >
+                        6. Mejora la calidad de vida
+                      </p>
+                    </div>
+                    <!-- Service Item -->
+                  </div>
+                  <!-- Service List -->
+                </div>
+                <!-- Service Block -->
+              </div>
+              <!-- Section Container -->
+            </div>
+            <!-- Section Space -->
+
+            <!-- Section Shape - Dot -->
+            <div
+              class="absolute top-[100px] -z-10 hidden xxl:left-[44px] xxl:inline-block"
+            >
+              <img
+                src="assets/img/elements/home-8-dot-shape-2.svg"
+                alt="home-8-dot-shape-2"
+                width="332"
+                height="244"
+              />
+            </div>
+
+            <!-- Section Shape - Arc -->
+            <div class="absolute left-0 top-0 -z-10 w-full">
+              <img
+                src="assets/img/elements/arc-shape-black.png"
+                alt="arc-shape-black"
+                width="1600"
+                height="94"
+                class="w-full"
+              />
+            </div>
+          </div>
+          <!-- Section Background -->
+        </section>
+        <!--...::: Service Section End :::... -->
+
+        <!-- Background Shape -->
+        <div
+          class="absolute -z-10 hidden xl:left-10 xl:top-[52%] xl:inline-block xxl:left-[90px] xxl:top-[49%]"
         >
-          &larr;
-        </button>
-        <button
-          id="next"
-          class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full"
+          <img
+            src="assets/img/elements/home-8-dot-shape-3.svg"
+            alt="home-8-dot-shape-3"
+            width="209"
+            height="297"
+          />
+        </div>
+        <!-- Background Shape -->
+
+        <!-- Horizontal Text Slider -->
+        <div
+          class="overflow-hidden bg-[#121212] py-5 text-3xl font-bold uppercase leading-[1.4] tracking-widest text-white"
         >
-          &rarr;
-        </button>
-      </div>
+          <!-- Horizontal Slider Block-->
+          <div class="horizontal-slide-from-right-to-left flex gap-x-[30px]">
+            <span class="flex whitespace-nowrap">Premios </span>
+            <img
+              src="assets/img/icons/icon-purple-flash.svg"
+              alt="arm-icon"
+              width="28"
+              height="35"
+            />
+            <span class="flex whitespace-nowrap">Donar </span>
+            <img
+              src="assets/img/icons/icon-purple-flash.svg"
+              alt="arm-icon"
+              width="28"
+              height="35"
+            />
+            <span class="flex whitespace-nowrap">Rifa Sostenible </span>
+            <img
+              src="assets/img/icons/icon-purple-flash.svg"
+              alt="arm-icon"
+              width="28"
+              height="35"
+            />
+            <span class="flex whitespace-nowrap">Consumo Responsable </span>
+            <img
+              src="assets/img/icons/icon-purple-flash.svg"
+              alt="arm-icon"
+              width="28"
+              height="35"
+            />
+            <span class="flex whitespace-nowrap">Economía Circular </span>
+            <img
+              src="assets/img/icons/icon-purple-flash.svg"
+              alt="arm-icon"
+              width="28"
+              height="35"
+            />
+            <span class="flex whitespace-nowrap">Reutilizar </span>
+            <img
+              src="assets/img/icons/icon-purple-flash.svg"
+              alt="arm-icon"
+              width="28"
+              height="35"
+            />
+            <span class="flex whitespace-nowrap">Donar </span>
+            <img
+              src="assets/img/icons/icon-purple-flash.svg"
+              alt="arm-icon"
+              width="28"
+              height="35"
+            />
+            <span class="flex whitespace-nowrap">Segunda Vida </span>
+            <img
+              src="assets/img/icons/icon-purple-flash.svg"
+              alt="arm-icon"
+              width="28"
+              height="35"
+            />
+            <span class="flex whitespace-nowrap">Planeta Sostenible </span>
+            <img
+              src="assets/img/icons/icon-purple-flash.svg"
+              alt="arm-icon"
+              width="28"
+              height="35"
+            />
+          </div>
+          <!-- Horizontal Slider Block-->
+        </div>
+        <!-- Horizontal Text Slider -->
 
-      <!-- Especificaciones del producto -->
-      <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
-        <h2 class="text-2xl font-semibold mb-4">
-          ¡Atención, comunidad de Actividad Fisica!
-        </h2>
-        <p>
-          ¡Estamos rifando nuestra cabina inalámbrica! ¡Queremos renovar nuestro
-          equipo de sonido! Con lo que recaudemos, podremos comprar una diadema
-          y un parlante más pequeño y fácil de llevar a todos lados.
-        </p>
-        <p>
-          Así, todos podremos disfrutar de mejor sonido mientras hacemos
-          ejercicio. ¡Súmate y gana!
-        </p>
-      </div>
+        <!-- Background Shape -->
+        <div
+          class="absolute -z-10 hidden xl:left-10 xl:inline-block xxl:left-[90px] xxl:top-[75%]"
+        >
+          <img
+            src="assets/img/elements/home-8-dot-shape-5.svg"
+            alt="home-8-dot-shape-5"
+            width="97"
+            height="226"
+          />
+        </div>
+        <!-- Background Shape -->
 
-      <!-- Día del sorteo -->
-      <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
-        <h2 class="text-xl font-semibold mb-4">Día del sorteo</h2>
-        <p>
-          ¡Prepárate para la emoción! El sorteo del parlante inalámbrico será
-          ¡SUPER SORPRESIVO! Se realizará cuando lleguemos al
-          <strong>90%</strong> de las ventas y los ganadores serán los dos
-          últimos números de la Lotería de Boyacá del
-          <strong>sábado siguiente</strong>. ¡No te pierdas esta oportunidad
-          única!
-        </p>
-      </div>
+        <!--...::: Blog Section Start :::... -->
+        <section class="section-blog">
+          <!-- Section Space -->
+          <div class="section-space">
+            <!-- Section Container -->
+            <div class="container-default hidden">
+              <!-- Section Content Wrapper -->
+              <div class="jos mb-[60px] xl:mb-20">
+                <!-- Section Content Block -->
+                <div class="mx-auto max-w-[640px]">
+                  <div class="mb-5">
+                    <h2
+                      class="mb-5 text-center font-PublicSans text-4xl font-bold leading-[1.14] text-[#1212121] lg:text-5xl xl:text-[56px]"
+                    >
+                      Browse our articles and resources to learn more
+                    </h2>
+                  </div>
+                  <p class="text-center">
+                    A lot of information is given in our blogs. You can learn
+                    more about startup by reading our blogs. It’s time to
+                    brainstorm ideas for your business
+                  </p>
+                </div>
+                <!-- Section Content Block -->
+              </div>
+              <!-- Section Content Wrapper -->
 
-      <!-- Condiciones especiales -->
-      <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
-        <h2 class="text-xl font-semibold mb-4">Reglas del sorteo</h2>
-        <p>
-          No se reservan puestos, los puestos solo se asignan una vez se
-          confirma el pago.
-        </p>
-      </div>
+              <!-- Blog List -->
+              <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Blog Item -->
+                <div class="jos" data-jos_animation="flip-left">
+                  <div
+                    class="group h-full rounded-[5px] border border-[#121212] p-5"
+                  >
+                    <!-- Blog Image -->
+                    <div class="relative overflow-hidden rounded-[5px]">
+                      <a href="blog-details.html" class="block">
+                        <img
+                          src="assets/img/th-8/blog-img-1.jpg"
+                          alt="blog-img-1"
+                          width="376"
+                          height="280"
+                          class="h-auto w-full transition-all duration-300 group-hover:scale-105"
+                        />
+                      </a>
+                      <a
+                        href="#"
+                        class="absolute right-[10px] top-[10px] inline-block rounded-[3px] bg-[#FDFBF9] px-5 py-[10px] text-base font-bold hover:bg-ColorLime"
+                      >
+                        Startup
+                      </a>
+                    </div>
+                    <div class="mt-6">
+                      <!-- Post Meta -->
+                      <div
+                        class="mb-[15px] flex flex-col gap-x-[15px] gap-y-2 text-base font-bold xl:flex-row"
+                      >
+                        <a
+                          href="#"
+                          class="flex gap-[10px] hover:text-ColorPurple"
+                        >
+                          <span class="text-lg"
+                            ><i class="fa-regular fa-circle-user"></i
+                          ></span>
+                          Adam Smith
+                        </a>
+                        <a
+                          href="#"
+                          class="flex gap-[10px] hover:text-ColorPurple"
+                        >
+                          <span class="text-lg"
+                            ><i class="fa-light fa-calendar"></i
+                          ></span>
+                          Feb 28, 2023
+                        </a>
+                      </div>
+                      <a
+                        href="blog-details.html"
+                        class="mb-[30px] block font-PublicSans font-bold leading-[1.35] text-[#121212] group-hover:text-ColorPurple xl:text-2xl xxl:text-[28px]"
+                        >Benefits to first-generation low-income
+                        entrepreneurs</a
+                      >
 
-      <!-- Forma de pago -->
-      <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
-        <h2 class="text-xl font-semibold mb-4">Forma de pago</h2>
-        <p>
-          Puedes realizar el pago a través de transferencia con Transfiya o
-          Nequi al número <strong>3108508836</strong>.
-        </p>
-        <p>Enviar comprobante via WhatsApp indicando tu número elegido.</p>
-      </div>
+                      <a
+                        href="service-details.html"
+                        class="mt-auto inline-flex items-center gap-x-2 text-base font-bold text-[#121212] hover:text-ColorPurple"
+                        >Read more
+                        <span
+                          class="transition-all duration-300 ease-in-out hover:translate-x-2"
+                        >
+                          <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Blog Item -->
+                <!-- Blog Item -->
+                <div class="jos" data-jos_animation="flip-left">
+                  <div
+                    class="group h-full rounded-[5px] border border-[#121212] p-5"
+                  >
+                    <!-- Blog Image -->
+                    <div class="relative overflow-hidden rounded-[5px]">
+                      <a href="blog-details.html" class="block">
+                        <img
+                          src="assets/img/th-8/blog-img-2.jpg"
+                          alt="blog-img-2"
+                          width="376"
+                          height="280"
+                          class="h-auto w-full transition-all duration-300 group-hover:scale-105"
+                        />
+                      </a>
+                      <a
+                        href="#"
+                        class="absolute right-[10px] top-[10px] inline-block rounded-[3px] bg-[#FDFBF9] px-5 py-[10px] text-base font-bold hover:bg-ColorLime"
+                      >
+                        Entrepreneurship
+                      </a>
+                    </div>
+                    <div class="mt-6">
+                      <!-- Post Meta -->
+                      <div
+                        class="mb-[15px] flex flex-col gap-x-[15px] gap-y-2 text-base font-bold xl:flex-row"
+                      >
+                        <a
+                          href="#"
+                          class="flex gap-[10px] hover:text-ColorPurple"
+                        >
+                          <span class="text-lg"
+                            ><i class="fa-regular fa-circle-user"></i
+                          ></span>
+                          Max Wevar
+                        </a>
+                        <a
+                          href="#"
+                          class="flex gap-[10px] hover:text-ColorPurple"
+                        >
+                          <span class="text-lg"
+                            ><i class="fa-light fa-calendar"></i
+                          ></span>
+                          Feb 10, 2023
+                        </a>
+                      </div>
+                      <a
+                        href="blog-details.html"
+                        class="mb-[30px] block font-PublicSans font-bold leading-[1.35] text-[#121212] group-hover:text-ColorPurple xl:text-2xl xxl:text-[28px]"
+                        >Dangers of a traditional for your career goal</a
+                      >
 
-      <!-- Tabla de puestos -->
-      <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
-        <h2 class="text-xl font-semibold mb-4">Lista de puestos</h2>
-        <table class="table-auto w-full text-left border-collapse">
-          <thead>
-            <tr class="bg-gray-200">
-              <th class="border px-4 py-2">Puesto</th>
-              <th class="border px-4 py-2">Nombre</th>
-              <th class="border px-4 py-2">Celular</th>
-            </tr>
-          </thead>
-          <tbody id="tabla-puestos">
-            <!-- Se llenará automáticamente -->
-          </tbody>
-        </table>
-      </div>
+                      <a
+                        href="service-details.html"
+                        class="mt-auto inline-flex items-center gap-x-2 text-base font-bold text-[#121212] hover:text-ColorPurple"
+                        >Read more
+                        <span
+                          class="transition-all duration-300 ease-in-out hover:translate-x-2"
+                        >
+                          <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Blog Item -->
+                <!-- Blog Item -->
+                <div class="jos" data-jos_animation="flip-left">
+                  <div
+                    class="group h-full rounded-[5px] border border-[#121212] p-5"
+                  >
+                    <!-- Blog Image -->
+                    <div class="relative overflow-hidden rounded-[5px]">
+                      <a href="blog-details.html" class="block">
+                        <img
+                          src="assets/img/th-8/blog-img-3.jpg"
+                          alt="blog-img-3"
+                          width="376"
+                          height="280"
+                          class="h-auto w-full transition-all duration-300 group-hover:scale-105"
+                        />
+                      </a>
+                      <a
+                        href="#"
+                        class="absolute right-[10px] top-[10px] inline-block rounded-[3px] bg-[#FDFBF9] px-5 py-[10px] text-base font-bold hover:bg-ColorLime"
+                      >
+                        Technology
+                      </a>
+                    </div>
+                    <div class="mt-6">
+                      <!-- Post Meta -->
+                      <div
+                        class="mb-[15px] flex flex-col gap-x-[15px] gap-y-2 text-base font-bold xl:flex-row"
+                      >
+                        <a
+                          href="#"
+                          class="flex gap-[10px] hover:text-ColorPurple"
+                        >
+                          <span class="text-lg"
+                            ><i class="fa-regular fa-circle-user"></i
+                          ></span>
+                          Willium Jons
+                        </a>
+                        <a
+                          href="#"
+                          class="flex gap-[10px] hover:text-ColorPurple"
+                        >
+                          <span class="text-lg"
+                            ><i class="fa-light fa-calendar"></i
+                          ></span>
+                          Feb 03, 2023
+                        </a>
+                      </div>
+                      <a
+                        href="blog-details.html"
+                        class="mb-[30px] block font-PublicSans font-bold leading-[1.35] text-[#121212] group-hover:text-ColorPurple xl:text-2xl xxl:text-[28px]"
+                        >How to increase ad revenue in mobile applications</a
+                      >
+
+                      <a
+                        href="service-details.html"
+                        class="mt-auto inline-flex items-center gap-x-2 text-base font-bold text-[#121212] hover:text-ColorPurple"
+                        >Read more
+                        <span
+                          class="transition-all duration-300 ease-in-out hover:translate-x-2"
+                        >
+                          <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Blog Item -->
+              </div>
+              <!-- Blog List -->
+            </div>
+            <!-- Section Container -->
+          </div>
+          <!-- Section Space -->
+        </section>
+        <!--...::: Blog Section End :::... -->
+      </main>
+
+      <!--...::: CTA Section Start :::... -->
+      <section class="section-cta relative z-30">
+        <!-- Negative Section Space -->
+        <div class="-mb-20 lg:-mb-40">
+          <!-- Section Container -->
+          <div class="container-default">
+            <div class="relative z-10 rounded-[5px] bg-ColorPurple">
+              <div class="py-[60px] lg:py-20 xl:py-[100px]">
+                <div
+                  class="mx-auto max-w-full px-8 md:max-w-[80%] lg:max-w-[675px]"
+                >
+                  <h2
+                    class="jos mb-5 text-center font-PublicSans text-4xl font-semibold leading-[1.14] text-[#1212121] text-white lg:text-5xl xl:text-[56px]"
+                  >
+                    ¡Súmate a nuestra causa!
+                  </h2>
+                  <p class="jos text-center text-white">
+                    Participa en nuestra rifa y ayúdanos a renovar nuestro
+                    equipo de sonido. ¡Con tu colaboración haremos que nuestras
+                    actividades físicas sean aún más divertidas y sostenibles!
+                  </p>
+                  <div class="jos flex flex-wrap justify-center gap-[18px]">
+                    <a
+                      href="https://wa.me/3108508836?text=Hola,%20anexo%20comprobante%20de%20pago.%20Mi%20número%20es:%20"
+                      class="btn is-lime is-large btn-animation group inline-block rounded-[3px]"
+                      ><span>Quiero mi puesto ya!</span></a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Background Shape -->
+              <div
+                class="absolute -z-10 hidden xl:left-10 xl:top-20 xl:inline-block xxl:left-20 xxl:top-[100px]"
+              >
+                <img
+                  src="assets/img/elements/home-8-dot-shape-6.svg"
+                  alt="home-3-content-img-shape-6"
+                  width="209"
+                  height="297"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- Section Container -->
+        </div>
+        <!-- Section Space -->
+      </section>
+      <!--...::: CTA Section End :::... -->
+
+      <!--...::: Footer Section Start :::... -->
+      <footer class="section-footer z-20">
+        <div class="relative z-10 bg-[#121212]">
+          <div class="pt-20 lg:pt-[100px] xl:pt-32 xxl:pt-[200px]">
+            <!-- Footer Area Center -->
+            <div class="text-[#FDFBF9]/80">
+              <!-- Footer Center Spacing -->
+              <div class="py-[60px] lg:py-20">
+                <!-- Section Container -->
+                <div class="container-default">
+                  <!-- Footer Widget List -->
+                  <div
+                    class="grid gap-x-16 gap-y-10 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-[1fr_repeat(2,_auto)] xl:gap-x-20 xxl:gap-x-[134px]"
+                  >
+                    <!-- Footer Widget Item -->
+                    <div
+                      class="flex flex-col gap-y-7 md:col-span-1 lg:col-span-1"
+                    >
+                      <!-- Footer Logo -->
+                      <a href="index.html">
+                        <img
+                          src="assets/img/GRlight.png"
+                          alt="Masco"
+                          width="109"
+                          height="24"
+                        />
+                      </a>
+                      <!-- Footer Content -->
+                      <div>
+                        <!-- Footer About Text -->
+                        <div class="lg:max-w-[416px]">
+                          ¿Quieres ganar premios increíbles y al mismo tiempo
+                          hacer del mundo un lugar mejor? ¡Estás en el lugar
+                          correcto! En GranRifa, creemos en la importancia de
+                          reutilizar y darle una segunda vida a los objetos. Por
+                          eso, organizamos rifas donde puedes ganar productos en
+                          excelente estado, donados por personas como tú.
+                        </div>
+                        <!-- Footer Mail -->
+                      </div>
+                      <!-- Footer Content -->
+                    </div>
+                    <!-- Footer Widget Item -->
+                  </div>
+                  <!-- Footer Widget List -->
+                </div>
+                <!-- Section Container -->
+              </div>
+              <!-- Footer Center Spacing -->
+            </div>
+            <div>
+              <!-- Footer Bottom Spacing -->
+              <div class="bg-[#FDFBF9]/10 py-[18px] text-white/80">
+                <!-- Section Container -->
+                <div class="container-default">
+                  <div class="text-center">
+                    &copy; Copyright 2024, All Rights Reserved by GranRifa
+                  </div>
+                </div>
+                <!-- Section Container -->
+              </div>
+              <!-- Footer Bottom Spacing -->
+            </div>
+
+            <!-- Section Shape - Arc -->
+            <div class="absolute left-0 top-0 -z-10 w-full">
+              <img
+                src="assets/img/elements/arc-shape-black.png"
+                alt="arc-shape-black"
+                width="1600"
+                height="94"
+                class="w-full"
+              />
+            </div>
+          </div>
+          <!-- Footer Bottom -->
+
+          <!-- Background Shape -->
+          <div
+            class="absolute -z-10 hidden xl:right-10 xl:top-20 xl:inline-block xxl:right-20 xxl:top-[100px]"
+          >
+            <img
+              src="assets/img/elements/home-8-dot-shape-7.svg"
+              alt="home-3-content-img-shape-7"
+              width="268"
+              height="291"
+            />
+          </div>
+        </div>
+      </footer>
+      <!--...::: Footer Section End :::... -->
     </div>
 
-    <script>
-      // Control del carrusel
-      let currentSlide = 0;
-      const slides = document.querySelectorAll(".carousel-item");
-      const totalSlides = slides.length;
+    <!--Vendor js-->
+    <script src="assets/js/vendors/counterup.js" type="module"></script>
+    <script src="assets/js/vendors/swiper-bundle.min.js"></script>
+    <script src="assets/js/vendors/fslightbox.js"></script>
+    <script src="assets/js/vendors/jos.min.js"></script>
+    <script src="assets/js/vendors/menu.js"></script>
 
-      document.getElementById("next").addEventListener("click", () => {
-        slides[currentSlide].classList.remove("active");
-        currentSlide = (currentSlide + 1) % totalSlides;
-        slides[currentSlide].classList.add("active");
-      });
-
-      document.getElementById("prev").addEventListener("click", () => {
-        slides[currentSlide].classList.remove("active");
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-        slides[currentSlide].classList.add("active");
-      });
-      async function obtenerDatosPuestos() {
-        const response = await fetch(
-          "https://script.google.com/macros/s/AKfycbwp8JX5MDqBgDIDpgI5lxp8W8wIH2q2PBQZYRV4KnVZWOac88JxTgS8llEABs5NnCeA/exec"
-        );
-        const datos = await response.json(); // Asumiendo que la respuesta es JSON
-
-        // Mostrar puestos ocupados y restantes
-        //document.getElementById("puestos-ocupados").innerText =
-        //  datos.puestosOcupados;
-        //document.getElementById("puestos-restantes").innerText =
-        //  datos.puestosRestantes;
-
-        // Poblar la tabla con los datos de los puestos
-        poblarTablaConJson(datos.puestos);
-      }
-
-      function poblarTablaConJson(jsonData) {
-        const tabla = document.getElementById("tabla-puestos");
-        tabla.innerHTML = ""; // Limpia la tabla
-
-        jsonData.forEach((dato) => {
-          const fila = document.createElement("tr");
-          fila.innerHTML = `
-                      <td class="border px-4 py-2 text-center">${dato.puesto}</td>
-                      <td class="border px-4 py-2">${dato.nombre}</td>
-                      <td class="border px-4 py-2">${dato.formaPago}</td>
-                  `;
-          tabla.appendChild(fila);
-        });
-      }
-
-      // Llama a la función para obtener los datos y poblar la tabla
-      obtenerDatosPuestos();
-    </script>
+    <!-- Main js -->
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

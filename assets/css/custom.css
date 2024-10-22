@@ -1,9 +1,9 @@
 .horizontal-slide-from-right-to-left {
-  animation: horizontal-slide-from-right-to-left linear 10s infinite;
+  animation: horizontal-slide-from-right-to-left linear 20s infinite;
 }
 
 .horizontal-slide-from-left-to-right {
-  animation: horizontal-slide-from-left-to-right linear 10s infinite;
+  animation: horizontal-slide-from-left-to-right linear 20s infinite;
 }
 
 @keyframes horizontal-slide-from-right-to-left {
@@ -42,22 +42,20 @@
   }
 }
 
-@keyframes rotate-360{
-  0%{
-    transform: rotate(0deg)
+@keyframes rotate-360 {
+  0% {
+    transform: rotate(0deg);
   }
 
-  100%{
-    transform: rotate(360deg)
+  100% {
+    transform: rotate(360deg);
   }
 }
 
-.rotate-360{
+.rotate-360 {
   animation: rotate-360 20s linear infinite;
 }
 
-
-input:checked~.toggle_dot {
+input:checked ~ .toggle_dot {
   transform: translateX(100%);
 }
-

@@ -6,9 +6,9 @@ const tableBody = document.getElementById("myTable").querySelector("tbody");
 function createTableRow(puesto, nombre, telefono) {
   const row = document.createElement("tr");
   row.innerHTML = `
-    <td class="text-center items-center border border-gray-200 px-4 py-2">${puesto}</td>
-    <td class="border border-gray-200 px-4 py-2">${nombre}</td>
-    <td class="border border-gray-200 px-4 py-2">${telefono}</td>
+    <td class="text-center items-center border border-gray-200 px-2 py-2">${puesto}</td>
+    <td class="border border-gray-200 px-2 py-2">${nombre}</td>
+    <td class="border border-gray-200 px-2 py-2">${telefono}</td>
   `;
   tableBody.appendChild(row);
 }

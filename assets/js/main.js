@@ -5,11 +5,19 @@ const tableBody = document.getElementById("myTable").querySelector("tbody");
 // Función para crear una nueva fila en la tabla
 function createTableRow(puesto, nombre, telefono) {
   const row = document.createElement("tr");
+
+  // Condicional para agregar la clase de color de fondo si nombre está vacío
+  let className = "border border-gray-200 px-2 py-2";
+  if (nombre) {
+    className += " bg-[#C1FF00]"; // Agrega una clase de Tailwind para el fondo rojo (puedes personalizar el color)
+  }
+
   row.innerHTML = `
-    <td class="text-center items-center border border-gray-200 px-2 py-2">${puesto}</td>
-    <td class="border border-gray-200 px-2 py-2">${nombre}</td>
-    <td class="border border-gray-200 px-2 py-2">${telefono}</td>
-  `;
+  <td class="text-center items-center ${className}">${puesto}</td>
+  <td class=" ${className}">${nombre}</td>
+  <td class=" ${className}">${telefono}</td>
+`;
+  console.log(row.innerHTML);
   tableBody.appendChild(row);
 }
 

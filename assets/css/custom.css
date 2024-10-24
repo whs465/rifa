@@ -1,9 +1,9 @@
 .horizontal-slide-from-right-to-left {
-  animation: horizontal-slide-from-right-to-left linear 10s infinite;
+  animation: horizontal-slide-from-right-to-left linear 5s infinite;
 }
 
 .horizontal-slide-from-left-to-right {
-  animation: horizontal-slide-from-left-to-right linear 10s infinite;
+  animation: horizontal-slide-from-left-to-right linear 5s infinite;
 }
 
 @keyframes horizontal-slide-from-right-to-left {

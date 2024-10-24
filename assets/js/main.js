@@ -13,7 +13,7 @@ function createTableRow(puesto, nombre, telefono) {
   }
 
   row.innerHTML = `
-  <td class="text-center items-center ${className}">${puesto}</td>
+  <td class="text-center font-bold items-center ${className}">${puesto}</td>
   <td class=" ${className}">${nombre}</td>
   <td class=" ${className}">${telefono}</td>
 `;

@@ -9,7 +9,7 @@ function createTableRow(puesto, nombre, telefono) {
   // Condicional para agregar la clase de color de fondo si nombre está vacío
   let className = "border border-gray-200 px-2 py-2";
   if (nombre) {
-    className += " bg-[#C1FF00]"; // Agrega una clase de Tailwind para el fondo rojo (puedes personalizar el color)
+    className += " bg-[#C1FF00] font-bold"; // Agrega una clase de Tailwind para el fondo rojo (puedes personalizar el color)
   }
 
   row.innerHTML = `

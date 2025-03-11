@@ -24,7 +24,7 @@ function createTableRow(puesto, nombre, telefono) {
 // Función para obtener los datos de la API y poblar la tabla
 function fetchDataAndPopulateTable() {
   fetch(
-    "https://script.google.com/macros/s/AKfycbwp8JX5MDqBgDIDpgI5lxp8W8wIH2q2PBQZYRV4KnVZWOac88JxTgS8llEABs5NnCeA/exec"
+    "https://script.google.com/macros/s/AKfycbzbkGSL8RWCxsQc7auX1P47OFlA7mSEr6xhSydKcfUqbThlaC3YUH2381nqKjmTFkRb/exec"
   )
     .then((response) => response.json())
     .then((data) => {
